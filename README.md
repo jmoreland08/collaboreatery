@@ -22,15 +22,15 @@ cuisine:{ type: String,required : true }
 location:{ type: String,required : true }
 price_point:{ type: String,required : true }
 imgURl:{ type: String,required : true }
-}```
+}
 
 Users
-```{
+{
 username:{ type: String,required : true }
 email:{ type: String,required : true }
 password_digest:{ type: String,required : true }
-}
-```
+}```
+
 
 ## Post MVP:
 - Filter by cuisine, location, and price point.
