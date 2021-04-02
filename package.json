@@ -1,0 +1,30 @@
+{
+  "name": "collaboreatery",
+  "version": "1.0.0",
+  "description": "Collboreatery is community fed database for restaraunts based price, location, and cuisine. After signing up users will have the ability to add their favorite restaraunt recomendations. Users will also have the ability to edit current listings. ## Team Expectations: https://docs.google.com/document/d/198EA5K5RKCRDwcpLmcwZPWa6K5ZMS0kmki_5Q9GW2F0/edit?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmoreland08/collaboreatery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmoreland08/collaboreatery/issues"
+  },
+  "homepage": "https://github.com/jmoreland08/collaboreatery#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
