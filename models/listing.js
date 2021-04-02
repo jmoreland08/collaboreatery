@@ -13,4 +13,4 @@ const Listing = new Schema(
     { timestamps: true },
 )
 
-module.exports = mongoose.model('Listing', Listing)
+module.exports = mongoose.model('listings', Listing)
