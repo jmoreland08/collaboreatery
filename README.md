@@ -29,7 +29,8 @@ Users
 username:{"",required : true}
 email:{"",required : true}
 password_digest:{"",required : true}
-}```
+}
+```
 
 ## Post MVP:
 - Filter by cuisine, location, and price point.
