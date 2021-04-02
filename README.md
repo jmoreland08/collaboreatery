@@ -6,7 +6,7 @@ Collboreatery is community fed database for restaurnts based price, location, an
 https://docs.google.com/document/d/198EA5K5RKCRDwcpLmcwZPWa6K5ZMS0kmki_5Q9GW2F0/edit?
 
 ## Whimsical:
-usp=sharinghttps://whimsical.com/p3-K3Q9ndzLFZkv95h6EHmn4g
+https://whimsical.com/p3-K3Q9ndzLFZkv95h6EHmn4g
 
 ## Projects Board:
 https://github.com/jmoreland08/collaboreatery/projects/1
