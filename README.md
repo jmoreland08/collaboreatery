@@ -31,7 +31,7 @@ email:{"",required : true}
 password_digest:{"",required : true}
 }```
 
-## Post MVP
+## Post MVP:
 - Filter by cuisine, location, and price point.
 - Add reviews to listings
 - Add roles to authentication
