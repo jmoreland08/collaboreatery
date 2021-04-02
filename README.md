@@ -16,19 +16,19 @@ https://github.com/jmoreland08/collaboreatery/projects/1
 ```
 Listings
 {
-name:{"",required : true}
-decription:{"",required : true}
-cuisine:{"",required : true}
-location:{"",required : true}
-price_point:{,required : true}
-imgURl:{"",required : true}
+name:{ type: String,required : true }
+decription:{ type: String,required : true }
+cuisine:{ type: String,required : true }
+location:{ type: String,required : true }
+price_point:{ type: String,required : true }
+imgURl:{ type: String,required : true }
 }```
 
 Users
 ```{
-username:{"",required : true}
-email:{"",required : true}
-password_digest:{"",required : true}
+username:{ type: String,required : true }
+email:{ type: String,required : true }
+password_digest:{ type: String,required : true }
 }
 ```
 
