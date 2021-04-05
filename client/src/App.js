@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Home from "./screens/Home/Home";
-// import Listings from "./screens/Listings/Listings";
+// import Home from "./screens/Home/Home";
+import {Listings} from "./screens/Listings/Listings";
 // import ListingCreate from "./screens/ListingCreate/ListingCreate";
 // import ListingEdit from "./screens/ListingEdit/ListingEdit";
 // import ListingDetail from "./screens/ListingDetail/ListingDetail";
@@ -26,11 +26,11 @@ function App() {
 
   return (
     <div className="App">
-      <Switch>
+      {/* <Switch>
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        {/* <Route path="/sign-up">
+        <Route path="/sign-up">
           <SignUp setUser={setUser} />
         </Route>
         <Route path="/sign-in">
@@ -38,11 +38,11 @@ function App() {
         </Route>
         <Route path="/sign-out">
           <SignOut setUser={setUser} clearUser={clearUser} />
-        </Route>
+        </Route> */}
         <Route exact path="/listings">
           <Listings user={user} />
         </Route>
-        <Route path="/add-listing">
+        {/* <Route path="/add-listing">
           {user ? <ListingCreate user={user} /> : <Redirect to="/sign-up" />}
         </Route>
         <Route exact path="/listings/:id/edit">
@@ -50,8 +50,8 @@ function App() {
         </Route>
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
-        </Route> */}
-      </Switch>
+        </Route>
+      </Switch> */}
     </div>
   );
 }
