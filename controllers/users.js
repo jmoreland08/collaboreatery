@@ -15,14 +15,14 @@ const signUp = async (req, res) => {
     const user = new User({
       username,
       email,
-      password_digest,
+      password_digest
     });
 
     await user.save();
 
     const payload = {
       username: user.username,
-      email: user.email,
+      email: user.email
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
@@ -43,7 +43,7 @@ const signIn = async (req, res) => {
     
       const payload = {
         username: user.username,
-        email: user.email,
+        email: user.email
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });
@@ -71,5 +71,5 @@ const verify = async (req, res) => {
 module.exports = {
   signUp,
   signIn,
-  verify,
+  verify
 };
