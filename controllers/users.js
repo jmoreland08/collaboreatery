@@ -71,5 +71,5 @@ const verify = async (req, res) => {
 module.exports = {
   signUp,
   signIn,
-  verify,
+  verify
 };
