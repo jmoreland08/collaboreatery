@@ -7,7 +7,7 @@ import Home from "./screens/Home/Home";
 // import ListingDetail from "./screens/ListingDetail/ListingDetail";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./services/users";
-// import SignUp from "./screens/SignUp/SignUp";
+import SignUp from "./screens/SignUp/SignUp";
 // import SignIn from "./screens/SignIn/SignIn";
 // import SignOut from "./screens/SignOut/SignOut";
 
@@ -27,16 +27,16 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/">
+        {/* <Route exact path="/">
           <Home user={user} />
-        </Route>
-        {/* <Route path="/sign-up">
+        </Route> */}
+         {/* <Route path="/sign-up">
           <SignUp setUser={setUser} />
-        </Route>
-        <Route path="/sign-in">
+        </Route> */}
+        {/* <Route path="/sign-in">
           <SignIn setUser={setUser} />
-        </Route>
-        <Route path="/sign-out">
+         </Route> */}
+         {/* <Route path="/sign-out">
           <SignOut setUser={setUser} clearUser={clearUser} />
         </Route>
         <Route exact path="/listings">
@@ -50,7 +50,7 @@ function App() {
         </Route>
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
-        </Route> */}
+        </Route>  */}
       </Switch>
     </div>
   );
