@@ -22,7 +22,7 @@ export const Listings = () => {
     return (
       listing.cuisine &&
       listing.cuisine.toLowerCase().includes(queryListing.toLowerCase())
-    )
+    );
   });
 
   return (
@@ -31,17 +31,21 @@ export const Listings = () => {
       {queryListing ? (
         <div className="Listing">
           {findListing.map((listing) => (
-            <Link to={`/listings/${listing._id}`}>
-              <Listing key={listing._id} listing={listing} />
-            </Link>
+            <div className="listing-card">
+              <Link to={`/listings/${listing._id}`}>
+                <Listing key={listing._id} listing={listing} />
+              </Link>
+            </div>
           ))}
         </div>
       ) : (
         <div className="Listing">
           {allListings.map((listing) => (
-            <Link to={`/listings/${listing._id}`}>
-              <Listing key={listing._id} listing={listing} />
-            </Link>
+            <div className="listing-card">
+              <Link to={`/listings/${listing._id}`}>
+                <Listing key={listing._id} listing={listing} />
+              </Link>
+            </div>
           ))}
         </div>
       )}
