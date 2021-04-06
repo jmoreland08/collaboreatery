@@ -4,7 +4,7 @@ import "./App.css";
 import {Listings} from "./screens/Listings/Listings";
 // import ListingCreate from "./screens/ListingCreate/ListingCreate";
 // import ListingEdit from "./screens/ListingEdit/ListingEdit";
-// import ListingDetail from "./screens/ListingDetail/ListingDetail";
+import ListingDetail from "./screens/ListingDetail/ListingDetail";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./services/users";
 // import SignUp from "./screens/SignUp/SignUp";
@@ -47,11 +47,11 @@ function App() {
         </Route>
         <Route exact path="/listings/:id/edit">
           {user ? <ListingEdit user={user} /> : <Redirect to="/" />}
-        </Route>
+        </Route> */}
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
         </Route>
-      </Switch> */}
+      {/* </Switch> */}
     </div>
   );
 }
