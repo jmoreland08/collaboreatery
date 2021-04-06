@@ -22,7 +22,7 @@ function App() {
     fetchUser();
   }, []);
 
-  const clearUser = () => setUser(null);
+  // const clearUser = () => setUser(null);
 
   return (
     <div className="App">
