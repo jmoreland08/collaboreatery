@@ -42,11 +42,11 @@ function SignUp(props) {
 
   const onSignUp = event => {
     event.preventDefault()
+    console.log('clicked')
     const { setUser } = props
 
     signUp(form)
-        .then(() => signIn(form))
-        .then(user => setUser(user))
+        .then((user) => setUser(user))
         .then(() => history.push('/'))
         .catch(error => {
             console.error(error)
@@ -102,7 +102,7 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br/>
-        <ColorButton variant="contained" color="primary" className={classes.margin}>
+        <ColorButton variant="contained" color="primary" type="submit" className={classes.margin}>
           Sign Up
         </ColorButton>
         

@@ -62,13 +62,13 @@ function SignIn(props) {
      <div className="form-container">
             
             <form onSubmit={onSignIn}>
-            <h3>Sign In</h3>
+            <h1>Sign In</h1>
                 <input
                     required
                     type="text"
                     name="username"
                     value={username}
-                    placeholder="Enter Username"
+                    placeholder="Username"
                     onChange={handleChange}
                 />
               
@@ -81,7 +81,7 @@ function SignIn(props) {
                     onChange={handleChange}
           />
           <br/>
-             <ColorButton variant="contained" color="primary" className={classes.margin}>
+             <ColorButton variant="contained" color="primary" type="submit" className={classes.margin}>
           Sign In
         </ColorButton>
             </form>
