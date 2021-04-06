@@ -18,9 +18,12 @@ export const Listings = () => {
     fetchListings();
   }, []);
 
-  const findListing = allListings.filter(
-    (listing) => listing.cuisine === queryListing
-  );
+  const findListing = allListings.filter((listing) => {
+    return (
+      listing.cuisine &&
+      listing.cuisine.toLowerCase().includes(queryListing.toLowerCase())
+    )
+  });
 
   return (
     <Layout>
