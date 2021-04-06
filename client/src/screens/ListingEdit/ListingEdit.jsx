@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import { updateListing, getListing } from "../../services/listings";
+import { Modal, Button } from "react-bootstrap";
 
 function ListingEdit(props) {
   const [name, setName] = useState("");
@@ -46,9 +47,19 @@ function ListingEdit(props) {
   return (
     //add  user={props.user} to layout tag once users are implemented
     <Layout>
-      <div>
+      <Modal
+        // {...props}
+        show="true"
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Edit Restaurant
+          </Modal.Title>
+        </Modal.Header>
         <form className="form-container" onSubmit={handleSubmit}>
-          <h1>Edit Restaurant</h1>
           <input
             required
             value={name}
@@ -86,8 +97,11 @@ function ListingEdit(props) {
             onChange={(e) => setImg_url(e.target.value)}
           />
           <button type="submit">submit</button>
+          <Modal.Footer>
+            <Button type="submit">Submit</Button>
+          </Modal.Footer>
         </form>
-      </div>
+      </Modal>
     </Layout>
   );
 }

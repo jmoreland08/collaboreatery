@@ -46,10 +46,12 @@ function App() {
         </Route>{" "}
         */
         <Route path="/add-listing">
-          {user ? <ListingCreate user={user} /> : <Redirect to="/sign-up" />}
+          <ListingCreate />
+          {/* {user ? <ListingCreate user={user} /> : <Redirect to="/sign-up" />} */}
         </Route>
         <Route exact path="/listings/:id/edit">
-          {user ? <ListingEdit user={user} /> : <Redirect to="/" />}
+          <ListingEdit />
+          {/* {user ? <ListingEdit user={user} /> : <Redirect to="/" />} */}
         </Route>
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
