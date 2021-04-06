@@ -4,7 +4,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { signUp, signIn } from '../../services/users'
 import { useState } from 'react';
 import { useHistory } from "react-router-dom"
-
+import Layout from "../../components/shared/Layout/Layout"
 const ColorButton = withStyles((theme) => ({
   root: {
     backgroundColor: '#FFB332',
@@ -62,6 +62,7 @@ function SignUp(props) {
       
   
   return (
+    <Layout>
     <div className="form-container">
       <form onSubmit={onSignUp}>
         <h1>Sign-Up</h1>
@@ -72,7 +73,8 @@ function SignUp(props) {
           value={username}
           placeholder="Username"
           onChange={handleChange}
-          />      
+        />
+        <br/>
         <input
           required
           type="email"
@@ -80,7 +82,8 @@ function SignUp(props) {
           value={email}
           placeholder="Email"
           onChange={handleChange}
-          />
+        />
+        <br/>
         <input
           required
           name="password"
@@ -88,7 +91,8 @@ function SignUp(props) {
           type="password"
           placeholder="Password"
           onChange={handleChange}
-        />        
+        />
+        <br/>
         <input
           required
           name="passwordConfirmation"
@@ -97,13 +101,14 @@ function SignUp(props) {
           placeholder="Confirm Password"
           onChange={handleChange}
         />
-
+        <br/>
         <ColorButton variant="contained" color="primary" className={classes.margin}>
           Sign Up
         </ColorButton>
         
       </form>
-    </div>
+      </div>
+      </Layout>
   )
 }
 export default SignUp;

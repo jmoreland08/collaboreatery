@@ -2,22 +2,28 @@
 .form-container{
   background-color: #FFF7E7;
   padding: 30px;
+  height: 100vh;
+  color: #707070;
 }
 input{
   text-align: center;
   font-size: 16px;
-  padding: 8px;
+  padding: 5px;
   margin: 15px;
-  
   border-radius: 25px;
   width: 250px;
+  color: #707070;
+  border: 1px solid #707070;;
+}
+input:focus{
+  outline: none;
 }
 .Button{
   border-radius: 25px;
 }
 form{
   width: 400px;
-  border: 1px solid black;
+  border: 1px solid #707070;;
   border-radius: 25px;
 
   margin-left:auto;
