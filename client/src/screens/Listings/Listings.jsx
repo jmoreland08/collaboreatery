@@ -1,11 +1,11 @@
-import { Listing } from "../../components/Listing/Listing.jsx"
+import { Listing } from "../../components/Listing/Listing.jsx";
 import { useState, useEffect } from "react";
 import { getListings } from "../../services/listings";
 import { Link } from "react-router-dom";
-import "./Listings.css"
+import "./Listings.css";
+import Layout from "../../components/Layout/Layout";
 
 export const Listings = () => {
-
   const [allListings, setAllListings] = useState([]);
 
   useEffect(() => {
@@ -17,13 +17,14 @@ export const Listings = () => {
   }, []);
 
   return (
-    <div className="Listing">
-      {allListings.map((listing) =>
-        <Link to={`/listings/ ${listing._id}`}>
-          <Listing listing={listing}/>
-        </Link>
-      )}
-    </div>
-  )
-}
- 
+    <Layout>
+      <div className="Listing">
+        {allListings.map((listing) => (
+          <Link to={`/listings/ ${listing._id}`}>
+            <Listing listing={listing} />
+          </Link>
+        ))}
+      </div>
+    </Layout>
+  );
+};
