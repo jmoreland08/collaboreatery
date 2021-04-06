@@ -1,0 +1,22 @@
+#carousel-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 200px;
+  width: 400px;
+  background-color: #dfe0df;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+#landing-carousel {
+  margin-top: 25px; 
+  /* height: 75px;
+  width: 300px; */
+}
+
+.d-block {
+  height: 150px;
+  width: 300px;
+}

@@ -1,10 +1,15 @@
 import React from "react";
+import './Home.css'
+import Layout from '../../components/shared/Layout/Layout'
+import Carousels from "../../components/Carousel/Carousel"
 
 function Home(props) {
   return (
+    <Layout className="home-layout">
     <div>
-      <h2>hello</h2>
-    </div>
+      <Carousels />
+      </div>
+      </Layout>
   );
 }
 
