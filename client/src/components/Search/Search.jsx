@@ -1,10 +1,19 @@
+import './Search.css'
 
-export default function Search({ queryListing, setQueryListing }) {
-  
-
+const Search = (props) => {
   return (
-    <div>
-      <input placeholder="Search by location..." className="listing-input" value={queryListing} onChange={((e) => setQueryListing(e.target.value))}/>
-    </div>
+      <form className="search-form" onSubmit={(e) => props.onSubmit(e)}>
+          <input
+              className="search-input"
+              value={props.value}
+              onChange={(e) => props.onChange(e)}
+              name="Search"
+              placeholder="Search"
+              type="text"
+              autoFocus
+          />
+      </form>
   )
 }
+
+export default Search
