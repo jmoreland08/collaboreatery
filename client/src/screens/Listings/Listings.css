@@ -14,6 +14,8 @@
   flex-flow: row wrap;
   justify-content: space-around;
   margin-top: 20px;
+  height: 100vh;
+  background-color: #FFF7E7;
 }
 
 .MuiCardActionArea-root {
@@ -22,5 +24,6 @@
 
 .Listing > a {
   text-decoration: none;
+
 }
 
