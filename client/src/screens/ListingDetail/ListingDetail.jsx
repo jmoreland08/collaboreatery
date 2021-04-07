@@ -48,7 +48,7 @@ const ListingDetail = () => {
           />
           : <Redirect to="/" />} */}
         <ListingEdit
-          user={user}
+          // user={user}
           show={show}
           setShow={setShow}
           editToggleFetch={editToggleFetch}
