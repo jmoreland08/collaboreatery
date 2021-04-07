@@ -5,15 +5,15 @@
   margin-top: 10px;
 }
 
-.browse-button{
-  background-color: #FFB332;
+.browse-button {
+  background-color: #ffb332;
   color: white;
   border-radius: 15px;
   border-width: 1px;
-  border-color: #DFE0DF;
+  border-color: #dfe0df;
   margin-top: 15px;
 }
-.about{
+.about {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -24,10 +24,9 @@
 .home-img {
   height: 100px;
   width: 100px;
- margin: 0 auto 0 auto;
-
+  margin: 0 auto 0 auto;
 }
-.content{
+.content {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;

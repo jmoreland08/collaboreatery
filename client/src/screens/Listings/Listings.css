@@ -1,9 +1,3 @@
-.listing-input {
-  margin-top: 75px;
-  margin-bottom: 50px;
-  width: 50vw;
-  outline: none;
-}
 
 .listing-card {
   margin-bottom: 30px;
@@ -14,6 +8,8 @@
   flex-flow: row wrap;
   justify-content: space-around;
   margin-top: 20px;
+  height: 100vh;
+  background-color: #FFF7E7;
 }
 
 .MuiCardActionArea-root {
@@ -22,5 +18,6 @@
 
 .Listing > a {
   text-decoration: none;
+
 }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Layout from "../../components/shared/Layout/Layout";
 import { updateListing, getListing } from "../../services/listings";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, Form } from "react-bootstrap";
+import "./ListingEdit.css";
 
-function ListingEdit(props) {
+function ListingEdit({ show, setShow, editToggleFetch, setEditToggleFetch }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
@@ -42,67 +42,76 @@ function ListingEdit(props) {
     };
     const editedListingData = await updateListing(id, editedListing);
     console.log(editedListingData);
+    setShow(false);
+    setEditToggleFetch(!editToggleFetch);
   };
 
   return (
     //add  user={props.user} to layout tag once users are implemented
-    <Layout>
-      <Modal
-        // {...props}
-        show="true"
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Edit Restaurant
-          </Modal.Title>
-        </Modal.Header>
-        <form className="form-container" onSubmit={handleSubmit}>
-          <input
+    <Modal
+      show={show}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton onHide={() => setShow(false)}>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Edit Restaurant
+        </Modal.Title>
+      </Modal.Header>
+      <Form className="form-container" onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Control
             required
             value={name}
             placeholder="Name"
             onChange={(e) => setName(e.target.value)}
           />
-          <input
+          <br />
+          <Form.Control
             required
             value={location}
             placeholder="Location"
             onChange={(e) => setLocation(e.target.value)}
           />
-          <input
+          <br />
+          <Form.Control
             required
             value={cuisine}
             placeholder="Cuisine"
             onChange={(e) => setCuisine(e.target.value)}
           />
-          <input
+          <br />
+          <Form.Control
+            as="textarea"
+            rows={3}
             required
             value={description}
             placeholder="Description"
             onChange={(e) => setDescription(e.target.value)}
           />
-          <input
+          <br />
+          <Form.Control
             required
             value={price_point}
             placeholder="Price Point"
             onChange={(e) => setPrice_point(e.target.value)}
           />
-          <input
+          <br />
+          <Form.Control
+            as="textarea"
+            rows={2}
             required
             value={image_url}
             placeholder="Image URL"
             onChange={(e) => setImg_url(e.target.value)}
           />
-          <button type="submit">submit</button>
-          <Modal.Footer>
-            <Button type="submit">Submit</Button>
-          </Modal.Footer>
-        </form>
-      </Modal>
-    </Layout>
+        </Form.Group>
+        <Modal.Footer>
+          <Button type="submit">Submit</Button>
+        </Modal.Footer>
+      </Form>
+    </Modal>
   );
 }
 

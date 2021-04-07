@@ -37,9 +37,9 @@ function Home(props) {
           />
         </div>
         <div className="content">
-          <h4>Add Your Favorite Place</h4>
-          <h4>Find What You're Craving</h4>
-          <h4>For The People By The People</h4>
+          <h3>Add Your Favorite Place</h3>
+          <h3>Find What You're Craving</h3>
+          <h3>For The People By The People</h3>
         </div>
       </div>
     </Layout>

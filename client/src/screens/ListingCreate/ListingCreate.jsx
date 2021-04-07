@@ -12,7 +12,7 @@ function ListingCreate(props) {
   const [cuisine, setCuisine] = useState("");
   const [image_url, setImg_url] = useState("");
   const [price_point, setPrice_point] = useState("");
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +26,7 @@ function ListingCreate(props) {
     };
     const newListingData = await createListing(newListing);
     console.log(newListingData);
+    // setShow(false);
   };
 
   return (
@@ -33,7 +34,7 @@ function ListingCreate(props) {
     <Layout>
       <Modal
         // {...props}
-        show="true"
+        // show={show}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
