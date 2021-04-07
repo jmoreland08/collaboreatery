@@ -5,7 +5,6 @@ import Home from "./screens/Home/Home";
 import { Listings } from "./screens/Listings/Listings";
 import ListingCreate from "./screens/ListingCreate/ListingCreate";
 
-
 import ListingEdit from "./screens/ListingEdit/ListingEdit";
 
 import ListingDetail from "./screens/ListingDetail/ListingDetail";
@@ -31,19 +30,16 @@ function App() {
   return (
     <div className="App">
       <Switch>
-
-
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        
+
         <Route path="/sign-up">
           <SignUp setUser={setUser} />
-
-        </Route> 
-         <Route path="/sign-in">
+        </Route>
+        <Route path="/sign-in">
           <SignIn setUser={setUser} />
-         </Route> 
+        </Route>
 
         {/* <Route path="/sign-out">
 
@@ -52,7 +48,8 @@ function App() {
         <Route exact path="/listings">
           <Listings user={user} />
 
-        </Route> */}
+        </Route>
+
 
         <Route path="/add-listing">
           <ListingCreate />
@@ -61,7 +58,9 @@ function App() {
 
         <Route exact path="/listings/:id/edit">
           <ListingEdit />
+
           {user ? <ListingEdit user={user} /> : <Redirect to="/" />} 
+
 
         </Route>
         {/* <Route exact path="/listings/:id/edit"> */}
@@ -69,9 +68,7 @@ function App() {
         {/* </Route> */}
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
-
         </Route>
-
       </Switch>
     </div>
   );
