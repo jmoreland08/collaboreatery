@@ -1,43 +1,66 @@
-import React from 'react'
-import './Nav.css'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import "./Nav.css";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import ListingCreate from "../../../screens/ListingCreate/ListingCreate";
 
-const authenticatedOptions = (
-  
+const Nav = ({ user, fetchListings }) => {
+  const [createToggleFetch, setCreateToggleFetch] = useState(false);
+  const [show, setShow] = useState(false);
+  const authenticatedOptions = (
     <>
-        <NavLink className="link" to="/add-listing">Add New Restaraunt</NavLink>
+      <button className="link" onClick={() => setShow(true)}>
+        Add New Restaraunt
+      </button>
 
-        <NavLink className="link" to="/sign-out">Sign Out</NavLink> 
-
+      <NavLink className="link" to="/sign-out">
+        Sign Out
+      </NavLink>
     </>
-)
+  );
 
-const unauthenticatedOptions = (
+  const unauthenticatedOptions = (
     <>
-        <NavLink className="link" to="/sign-up">Sign Up</NavLink>
-        <NavLink className="link" to="/sign-in">Sign In</NavLink>
+      <NavLink className="link" to="/sign-up">
+        Sign Up
+      </NavLink>
+      <NavLink className="link" to="/sign-in">
+        Sign In
+      </NavLink>
     </>
-)
+  );
 
-const alwaysOptions = (
+  const alwaysOptions = (
     <>
-        <NavLink className="link" to="/listings">View Restaraunts</NavLink>
+      <NavLink className="link" to="/listings">
+        View Restaraunts
+      </NavLink>
     </>
-)
+  );
 
-const Nav = ({ user }) => {
-        return (
-            <nav>
-                <div id="nav">
-                    <NavLink className="logo" to="/">Collaboreatery</NavLink>
-                    <div className="links">
-                        {user && <div className="link welcome">Welcome, {user.username}</div>}
-                        {alwaysOptions}
-                        {user ? authenticatedOptions : unauthenticatedOptions}
-                    </div>
-                </div>
-            </nav>
-        )
-}
+  return (
+    <nav>
+      <div id="nav">
+        <NavLink className="logo" to="/">
+          Collaboreatery
+        </NavLink>
+        <div className="links">
+          {user && <div className="link welcome">Welcome, {user.username}</div>}
+          {alwaysOptions}
+          {/* {user ? authenticatedOptions : unauthenticatedOptions} */}
+          {authenticatedOptions}
+        </div>
+      </div>
+      <ListingCreate
+        // user={user}
+        fetchListings={fetchListings}
+        show={show}
+        setShow={setShow}
+        createToggleFetch={createToggleFetch}
+        setCreateToggleFetch={setCreateToggleFetch}
+      />
+    </nav>
+  );
+};
 
-export default Nav
+export default Nav;

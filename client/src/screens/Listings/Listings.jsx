@@ -12,6 +12,7 @@ export const Listings = (props) => {
   const [allListings, setAllListings] = useState([]);
   const [queryListing, setQueryListing] = useState([]);
   const [sortType, setSortType] = useState([]);
+  const [toggleFetch, setToggleFetch] = useState(false);
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -20,7 +21,7 @@ export const Listings = (props) => {
       setQueryListing(listings);
     };
     fetchListings();
-  }, []);
+  }, [toggleFetch]);
 
   const handleSort = (type) => {
     setSortType(type);
@@ -49,10 +50,19 @@ export const Listings = (props) => {
     setQueryListing(newQueriedProducts, () => handleSort(sortType));
   };
 
+
+  const toggleToggleFetch = () => {
+    setToggleFetch(!toggleFetch);
+  };
+
   const handleSubmit = (event) => event.preventDefault();
 
+
   return (
-    <Layout user={props.user}>
+    <Layout fetchListings={toggleToggleFetch} user={props.user}>
+
+
+
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
 
