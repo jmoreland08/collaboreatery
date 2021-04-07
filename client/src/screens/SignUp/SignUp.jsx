@@ -4,7 +4,7 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import { signUp, signIn } from '../../services/users'
 import { useState } from 'react';
 import { useHistory } from "react-router-dom"
-
+import Layout from "../../components/shared/Layout/Layout"
 const ColorButton = withStyles((theme) => ({
   root: {
     backgroundColor: '#FFB332',
@@ -42,11 +42,11 @@ function SignUp(props) {
 
   const onSignUp = event => {
     event.preventDefault()
+    console.log('clicked')
     const { setUser } = props
 
     signUp(form)
-        .then(() => signIn(form))
-        .then(user => setUser(user))
+        .then((user) => setUser(user))
         .then(() => history.push('/'))
         .catch(error => {
             console.error(error)
@@ -62,34 +62,44 @@ function SignUp(props) {
       
   
   return (
-    <div className="form-container">
-      <form onSubmit={onSignUp}>
+    <Layout>
+    <div className="signup-In-form-container">
+        <form onSubmit={onSignUp}
+        className="signup-In-form"
+        >
         <h1>Sign-Up</h1>
-        <input
+          <input
+            className="signup-In-input"
           required
           type="text"
           name="username"
           value={username}
           placeholder="Username"
           onChange={handleChange}
-          />      
-        <input
+        />
+        <br/>
+          <input
+            className="signup-In-input"
           required
           type="email"
           name="email"
           value={email}
           placeholder="Email"
           onChange={handleChange}
-          />
-        <input
+        />
+        <br/>
+          <input
+            className="signup-In-input"
           required
           name="password"
           value={password}
           type="password"
           placeholder="Password"
           onChange={handleChange}
-        />        
-        <input
+        />
+        <br/>
+          <input
+            className="signup-In-input"
           required
           name="passwordConfirmation"
           value={passwordConfirmation}
@@ -97,13 +107,14 @@ function SignUp(props) {
           placeholder="Confirm Password"
           onChange={handleChange}
         />
-
-        <ColorButton variant="contained" color="primary" className={classes.margin}>
+        <br/>
+        <ColorButton variant="contained" color="primary" type="submit" className={classes.margin}>
           Sign Up
         </ColorButton>
         
       </form>
-    </div>
+      </div>
+      </Layout>
   )
 }
 export default SignUp;

@@ -36,13 +36,15 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
+        */}
         <Route path="/sign-up">
           <SignUp setUser={setUser} />
 
-        </Route>
-        <Route path="/sign-in">
+        </Route> 
+         <Route path="/sign-in">
           <SignIn setUser={setUser} />
-        </Route>
+         </Route> 
+
         {/* <Route path="/sign-out">
 
           <SignOut setUser={setUser} clearUser={clearUser} />

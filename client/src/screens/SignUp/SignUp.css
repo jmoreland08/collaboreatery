@@ -1,26 +1,36 @@
 
-.form-container{
+.signup-In-form-container{
   background-color: #FFF7E7;
   padding: 30px;
+  height: 100vh;
+  color: #707070;
 }
-input{
+.signup-In-input{
   text-align: center;
   font-size: 16px;
-  padding: 8px;
+  padding: 5px;
   margin: 15px;
-  
   border-radius: 25px;
   width: 250px;
+  color: #707070;
+  border: 1px solid #707070;
+  box-shadow: 1px 1px 3px 1px grey;
 }
-.Button{
-  border-radius: 25px;
+.signup-In-input:focus{
+  outline: none;
 }
-form{
-  width: 400px;
-  border: 1px solid black;
-  border-radius: 25px;
 
+.signup-In-form{
+  width: 400px;
+  border: 1px solid #707070;;
+  border-radius: 25px;
+padding: 30px;
   margin-left:auto;
   margin-right:auto;
   background-color: #DFE0DF;
+  box-shadow: 1px 1px 3px 1px grey;
+}
+.signup-In-form > .signup-In-input{
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
