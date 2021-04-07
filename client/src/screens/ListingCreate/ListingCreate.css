@@ -1,7 +1,23 @@
-/* .modal-content {
-  border-radius: 25px;
+.form-group {
+  margin-left: 30px;
+  margin-top: 30px;
+  width: 80%;
 }
 
-.modal.show .modal-dialogue {
-  width: 400px;
-} */
+.form-container {
+  background-color: #dfe0df;
+}
+
+.btn-primary {
+  background-color: #ffb332;
+}
+
+.modal-header {
+  background-color: #ffa08b;
+  color: #707070;
+}
+
+#form-button {
+  background-color: #ffb332;
+  border: none;
+}
