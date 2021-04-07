@@ -1,4 +1,4 @@
-import { useParams, Link, Redirect, useHistory } from "react-router-dom";
+import { useParams, Redirect, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getListing, deleteListing } from "../../services/listings";
 import Layout from "../../components/shared/Layout/Layout";
@@ -18,7 +18,7 @@ const ListingDetail = (props) => {
       setListing(listing);
     };
     fetchListing();
-  }, [editToggleFetch]);
+  }, [editToggleFetch, id]);
 
   const deleteCurrentListing = async () => {
     await deleteListing(Listing._id);
@@ -43,23 +43,17 @@ const ListingDetail = (props) => {
             Edit
           </button>
         </div>
-        {/* USE THIS INSTEAD OF THE NEXT LISTINGEDIT ONCE USERS ARE IMPLEMENTED 
-        {user ?  
-        <ListingEdit
-          user={user}
-          show={show}
-          setShow={setShow}
-          editToggleFetch={editToggleFetch}
-          setEditToggleFetch={setEditToggleFetch}
+        {props.user ? (
+          <ListingEdit
+            user={props.user}
+            show={show}
+            setShow={setShow}
+            editToggleFetch={editToggleFetch}
+            setEditToggleFetch={setEditToggleFetch}
           />
-          : <Redirect to="/" />} */}
-        <ListingEdit
-          // user={user}
-          show={show}
-          setShow={setShow}
-          editToggleFetch={editToggleFetch}
-          setEditToggleFetch={setEditToggleFetch}
-        />
+        ) : (
+          <Redirect to="/" />
+        )}
       </div>
     </Layout>
   );
