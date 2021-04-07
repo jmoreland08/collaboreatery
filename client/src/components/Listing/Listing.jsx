@@ -32,8 +32,8 @@ export const Listing = (props) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2"></Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {listing.description}
+            <Typography variant="body3" color="textSecondary" component="h6">
+              {listing.name}
             </Typography>
           </CardContent>
         </CardActionArea>
