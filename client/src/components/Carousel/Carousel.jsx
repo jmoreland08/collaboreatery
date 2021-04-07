@@ -26,39 +26,39 @@ console.log(randListing)
     <div id="carousel-div">
       <Carousel id="landing-carousel">
         <Carousel.Item>
-        {/* console.log(randListing) */}
+        
             <Link to={`/listings/${randListing._id}`}>
               <img
-                className="d-block"
-                src={randListing.image_url}
-                alt="First slide"
+              className="d-block"
+              src={randListing.image_url}
+              alt="first slide"
               />
             </Link>
           
           <Carousel.Caption>
-            <h3>First slide label</h3>
+            <h3>{randListing.name}</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block"
-            src="https://images.unsplash.com/photo-1560187839-85fa7adfcf39?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHJlc3RhdXJhbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src={randListing.image_url}
             alt="Second slide"
           />
 
           <Carousel.Caption>
-            <h3>Second slide label</h3>
+            <h3>{randListing.name}</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
             className="d-block"
-            src="https://images.unsplash.com/photo-1512838154171-97c4fa39f33b?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fHJlc3RhdXJhbnRzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+            src={randListing.image_url}
             alt="Third slide"
           />
 
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>{randListing.name}</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
