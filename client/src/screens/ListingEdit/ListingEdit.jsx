@@ -107,8 +107,10 @@ function ListingEdit({ show, setShow, editToggleFetch, setEditToggleFetch }) {
             onChange={(e) => setImg_url(e.target.value)}
           />
         </Form.Group>
-        <Modal.Footer>
-          <Button type="submit">Submit</Button>
+        <Modal.Footer id="modal-footer">
+          <Button id="form-button" type="submit">
+            Submit
+          </Button>
         </Modal.Footer>
       </Form>
     </Modal>

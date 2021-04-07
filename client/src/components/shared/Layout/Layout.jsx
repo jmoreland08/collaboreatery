@@ -4,7 +4,7 @@ import Nav from "../Nav/Nav";
 
 const Layout = (props) => (
   <div className="layout">
-    <Nav user={props.user} />
+    <Nav {...props} />
     <div className="layout-children">{props.children}</div>
   </div>
 );

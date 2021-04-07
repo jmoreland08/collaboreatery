@@ -16,3 +16,13 @@
   background-color: #ffa08b;
   color: #707070;
 }
+
+#form-button {
+  background-color: #ffb332;
+  border: none;
+  width: 30%;
+}
+
+#modal-footer {
+  justify-content: center;
+}

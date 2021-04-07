@@ -1,25 +1,23 @@
 #nav {
   display: flex;
   flex-direction: row;
-  background-color: #FFA08B;
+  background-color: #ffa08b;
   border-style: solid;
   border-color: #707070;
   border-width: 1px;
   justify-content: space-between;
   height: 50px;
   align-items: center;
- 
-  
-  
-
 }
 .link {
-  color: #FFF7E7;
+  color: #fff7e7;
   margin-right: 30px;
+  border: none;
+  background-color: #ffa08b;
 }
 
-.logo{
-  color: #FFF7E7;
+.logo {
+  color: #fff7e7;
   margin-left: 40px;
   font-weight: 700;
   font-size: 20px;
