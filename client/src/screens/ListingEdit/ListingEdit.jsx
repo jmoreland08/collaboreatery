@@ -5,21 +5,25 @@ import { updateListing, getListing } from "../../services/listings";
 import { Modal, Button, Form } from "react-bootstrap";
 import "./ListingEdit.css";
 
-function ListingEdit({ show, setShow, editToggleFetch, setEditToggleFetch }) {
+function ListingEdit({
+  show,
+  setShow,
+  editToggleFetch,
+  setEditToggleFetch,
+  user,
+}) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [image_url, setImg_url] = useState("");
   const [price_point, setPrice_point] = useState("");
-  const [listing, setListing] = useState({});
 
   let { id } = useParams();
 
   useEffect(() => {
     const fetchListing = async () => {
       const listing = await getListing(id);
-      setListing(listing);
       setName(listing.name);
       setDescription(listing.description);
       setLocation(listing.location);
@@ -28,7 +32,7 @@ function ListingEdit({ show, setShow, editToggleFetch, setEditToggleFetch }) {
       setPrice_point(listing.price_point);
     };
     fetchListing();
-  }, []);
+  }, [id]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,7 +51,6 @@ function ListingEdit({ show, setShow, editToggleFetch, setEditToggleFetch }) {
   };
 
   return (
-    //add  user={props.user} to layout tag once users are implemented
     <Modal
       show={show}
       size="lg"

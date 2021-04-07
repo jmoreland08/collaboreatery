@@ -7,8 +7,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 export default function Carousels() {
   const [allListings, setAllListings] = useState([]);
-  let randListing = allListings[Math.floor(Math.random()*allListings.length)];
-console.log(randListing)
+  let randListing = allListings[Math.floor(Math.random() * allListings.length)];
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -18,15 +17,14 @@ console.log(randListing)
     fetchListings();
   }, []);
   if (!randListing) {
-    return <h1>Loading ....</h1>
+    return <h1>Loading ....</h1>;
   }
 
   return (
-    
     <div id="carousel-div">
       <Carousel id="landing-carousel">
         <Carousel.Item>
-        
+
             <Link to={`/listings/${randListing._id}`}>
               <img
               className="d-block"

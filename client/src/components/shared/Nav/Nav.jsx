@@ -47,12 +47,11 @@ const Nav = ({ user, fetchListings }) => {
         <div className="links">
           {user && <div className="link welcome">Welcome, {user.username}</div>}
           {alwaysOptions}
-          {/* {user ? authenticatedOptions : unauthenticatedOptions} */}
-          {authenticatedOptions}
+          {user ? authenticatedOptions : unauthenticatedOptions}
         </div>
       </div>
       <ListingCreate
-        // user={user}
+        user={user}
         fetchListings={fetchListings}
         show={show}
         setShow={setShow}
