@@ -8,7 +8,7 @@
 .browse-button {
   background-color: #ffb332;
   color: white;
-  border-radius: 15px;
+  border-radius: 25px;
   border-width: 1px;
   border-color: #dfe0df;
   margin-top: 15px;
@@ -24,7 +24,7 @@
 .home-img {
   height: 100px;
   width: 100px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 0 auto ;
 }
 .content {
   display: flex;
@@ -32,6 +32,8 @@
   flex-wrap: nowrap;
   justify-content: center;
   margin-top: 30px;
-  font-size: 12px;
+  font-size: 14px;
+  width: 100vw;
   margin: 0 auto 0 auto;
+  padding-top: 5px;
 }

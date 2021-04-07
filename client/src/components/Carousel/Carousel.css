@@ -32,8 +32,18 @@
   position: absolute;
   padding-top: 20px;
   padding-bottom: 0px;
-  margin-bottom: -85px;
-  color:black;
+  margin-bottom: -50px;
+  color:white;
   text-align: center;
-  opacity: 100%;
+  /* opacity: 80%;
+  background-color: black;
+  background-size: cover; */
+}
+h3 {
+  opacity: 80%;
+  background-color: black;
+  background-size: cover;  
+}
+.carousel-indicators {
+  opacity: 0%
 }

@@ -63,6 +63,9 @@ export const Listings = (props) => {
 
 
 
+    <Layout user={props.user}>
+
+
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
 
