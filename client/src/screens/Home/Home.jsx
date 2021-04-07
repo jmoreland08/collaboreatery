@@ -6,7 +6,7 @@ import Carousels from "../../components/Carousel/Carousel";
 
 function Home(props) {
   return (
-    <Layout className="home-layout">
+    <Layout className="home-layout" user={props.user}>
       <div>
         <div>
           <h1 className="home-header">

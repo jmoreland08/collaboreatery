@@ -4,16 +4,13 @@ import "./App.css";
 import Home from "./screens/Home/Home";
 import { Listings } from "./screens/Listings/Listings";
 import ListingCreate from "./screens/ListingCreate/ListingCreate";
-
-
 import ListingEdit from "./screens/ListingEdit/ListingEdit";
-
 import ListingDetail from "./screens/ListingDetail/ListingDetail";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { verifyUser } from "./services/users";
 import SignUp from "./screens/SignUp/SignUp";
 import SignIn from "./screens/SignIn/SignIn";
-// import SignOut from "./screens/SignOut/SignOut";
+import SignOut from "./screens/SignOut/SignOut";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -26,7 +23,7 @@ function App() {
     fetchUser();
   }, []);
 
-  // const clearUser = () => setUser(null);
+  const clearUser = () => setUser(null);
 
   return (
     <div className="App">
@@ -36,19 +33,19 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
-        */}
+        
         <Route path="/sign-up">
           <SignUp setUser={setUser} />
-
-        </Route> 
+        </Route>
+        
          <Route path="/sign-in">
           <SignIn setUser={setUser} />
          </Route> 
 
-        {/* <Route path="/sign-out">
+        <Route path="/sign-out">
 
           <SignOut setUser={setUser} clearUser={clearUser} />
-        </Route> */}
+        </Route>
         <Route exact path="/listings">
           <Listings user={user} />
 

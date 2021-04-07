@@ -4,7 +4,7 @@ import { getListing } from "../../services/listings";
 import Layout from "../../components/shared/Layout/Layout";
 import "./ListingDetail.css";
 
-const ListingDetail = () => {
+const ListingDetail = (props) => {
   const { id } = useParams();
   const [Listing, setListing] = useState([]);
 
@@ -17,7 +17,7 @@ const ListingDetail = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="listing">
         <div className="listing-img-price">
           <img src={Listing.image_url} alt="listing" />

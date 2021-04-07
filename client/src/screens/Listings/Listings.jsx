@@ -6,7 +6,7 @@ import Layout from "../../components/shared/Layout/Layout";
 import Search from "../../components/Search/Search";
 import "./Listings.css";
 
-export const Listings = () => {
+export const Listings = (props) => {
   const [allListings, setAllListings] = useState([]);
   const [queryListing, setQueryListing] = useState("");
 
@@ -26,7 +26,7 @@ export const Listings = () => {
   });
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <Search queryListing={queryListing} setQueryListing={setQueryListing} />
       {queryListing ? (
         <div className="Listing">

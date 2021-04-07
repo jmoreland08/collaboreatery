@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme) => ({
 
 function SignUp(props) {
 
- 
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -31,9 +30,11 @@ function SignUp(props) {
     isError: false,
     errorMsg: ''
   });
+
   const { email, username, password, passwordConfirmation } = form;
   const classes = useStyles();
-   const history = useHistory();
+  const history = useHistory();
+  
   const handleChange = event =>
     setForm({
       ...form,
@@ -59,7 +60,7 @@ function SignUp(props) {
             })
         })
 }
-      
+
   
   return (
     <Layout>
