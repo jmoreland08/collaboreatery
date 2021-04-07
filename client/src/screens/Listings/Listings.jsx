@@ -22,13 +22,6 @@ export const Listings = () => {
     fetchListings();
   }, []);
 
-  // const findListing = allListings.filter((listing) => {
-  //   return (
-  //     listing.cuisine &&
-  //     listing.cuisine.toLowerCase().includes(queryListing.toLowerCase())
-  //   );
-  // });
-
   const handleSort = type => {
     setSortType(type)
     switch (type) {
@@ -55,7 +48,7 @@ export const Listings = () => {
   }
 
   const handleSubmit = event => event.preventDefault()
-console.log(queryListing)
+
   return (
     <Layout>
       <Search onChange={handleSearch} />
@@ -63,7 +56,7 @@ console.log(queryListing)
       {queryListing ? (
         <div className="Listing">
           {queryListing.map((listing) => (
-            <div className="listing-card">
+            <div key={listing._id} className="listing-card">
               <Link to={`/listings/${listing._id}`}>
                 <Listing key={listing._id} listing={listing} />
               </Link>
@@ -73,7 +66,7 @@ console.log(queryListing)
       ) : (
         <div className="Listing">
           {allListings.map((listing) => (
-            <div className="listing-card">
+            <div key={listing._id} className="listing-card">
               <Link to={`/listings/${listing._id}`}>
                 <Listing key={listing._id} listing={listing} />
               </Link>
