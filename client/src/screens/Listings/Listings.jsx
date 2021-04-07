@@ -56,9 +56,10 @@ export const Listings = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
+
   return (
     <Layout fetchListings={toggleToggleFetch} user={props.user}>
-      <Search queryListing={queryListing} setQueryListing={setQueryListing} />
+
 
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />

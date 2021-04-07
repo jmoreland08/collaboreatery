@@ -109,7 +109,7 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br/>
-        <ColorButton variant="contained" color="primary" type="submit" className={classes.margin}>
+        <ColorButton variant="contained" color="primary" type="submit" className={classes.margin} >
           Sign Up
         </ColorButton>
         
