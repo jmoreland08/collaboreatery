@@ -50,6 +50,7 @@ export const Listings = (props) => {
     setQueryListing(newQueriedProducts, () => handleSort(sortType));
   };
 
+
   const toggleToggleFetch = () => {
     setToggleFetch(!toggleFetch);
   };
@@ -59,6 +60,7 @@ export const Listings = (props) => {
 
   return (
     <Layout fetchListings={toggleToggleFetch} user={props.user}>
+
 
 
       <Search onChange={handleSearch} />
