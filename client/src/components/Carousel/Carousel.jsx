@@ -1,19 +1,41 @@
 import React from "react";
 import "./Carousel.css";
+import { Link } from "react-router-dom";
+import { getListings } from "../../services/listings";
+import { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 export default function Carousels() {
+  const [allListings, setAllListings] = useState([]);
+  let randListing = allListings[Math.floor(Math.random()*allListings.length)];
+console.log(randListing)
+
+  useEffect(() => {
+    const fetchListings = async () => {
+      const listings = await getListings();
+      setAllListings(listings);
+    };
+    fetchListings();
+  }, []);
+  if (!randListing) {
+    return <h1>Loading ....</h1>
+  }
+
   return (
+    
     <div id="carousel-div">
       <Carousel id="landing-carousel">
         <Carousel.Item>
-          <img
-            className="d-block"
-            src="https://images.unsplash.com/photo-1515669097368-22e68427d265?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVzdGF1cmFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60"
-            alt="First slide"
-          />
+        {/* console.log(randListing) */}
+            <Link to={`/listings/${randListing._id}`}>
+              <img
+                className="d-block"
+                src={randListing.image_url}
+                alt="First slide"
+              />
+            </Link>
+          
           <Carousel.Caption>
-            
             <h3>First slide label</h3>
           </Carousel.Caption>
         </Carousel.Item>

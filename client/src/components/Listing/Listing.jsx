@@ -5,7 +5,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 350,
@@ -13,7 +12,7 @@ const useStyles = makeStyles({
     marginBottom: 20,
     marginLeft: 65,
     marginRight: 65,
-    backgroundColor: '#DFE0DF',
+    backgroundColor: "#DFE0DF",
   },
 });
 
@@ -22,22 +21,22 @@ export const Listing = (props) => {
   const classes = useStyles();
 
   return (
-        <Card className={classes.root}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              alt="listing"
-              height="140"
-              image={listing.image_url}
-              title="collaboreatery"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2"></Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {listing.description}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            alt="listing"
+            height="140"
+            image={listing.image_url}
+            title="collaboreatery"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2"></Typography>
+            <Typography variant="body3" color="textSecondary" component="h6">
+              {listing.name}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
   );
 };

@@ -33,6 +33,7 @@ function App() {
         <Route exact path="/">
           <Home user={user} />
         </Route>
+
         <Route path="/sign-up">
           <SignUp setUser={setUser} />
         </Route>
@@ -43,15 +44,17 @@ function App() {
         {/* <Route path="/sign-out">
 
           <SignOut setUser={setUser} clearUser={clearUser} />
-        </Route> */}
+        </Route> 
         <Route exact path="/listings">
           <Listings user={user} />
         </Route>
 
+
         <Route path="/add-listing">
           <ListingCreate />
-          {/* {user ? <ListingCreate user={user} /> : <Redirect to="/sign-up" />} */}
+           {user ? <ListingCreate user={user} /> : <Redirect to="/sign-up" />} 
         </Route>
+
 
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />

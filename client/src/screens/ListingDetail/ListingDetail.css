@@ -1,11 +1,12 @@
 
 .listing {
-  color: #dfe0df;
+  color: #858585;
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  background-color: #fff7e7;
+  height: 100vh;
 }
 
 .listing-img-price {
@@ -14,15 +15,16 @@
 }
 
 .listing-img-price > img {
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: inherit;
   border-radius: 50px;
 }
 
 .listing-info {
-  height: 450px;
+  height: 300px;
   width: fit-content;
   margin-right: 100px;
+  padding-top: 25px;
 }
 
 .listing-info > h4{
@@ -32,6 +34,6 @@
 
 .listing-info > p {
   width: fit-content;
-  margin-top: 75px;
+  margin-top: 45px;
   font-size: 20px;
 }
