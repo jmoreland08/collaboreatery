@@ -8,7 +8,7 @@ import "./Listings.css";
 import { AZ, ZA, lowestFirst, highestFirst } from "../../utils/sort"
 import Sort from '../../components/Sort/Sort'
 
-export const Listings = () => {
+export const Listings = (props) => {
   const [allListings, setAllListings] = useState([]);
   const [queryListing, setQueryListing] = useState([]);
   const [sortType, setSortType] = useState([]);
@@ -50,9 +50,14 @@ export const Listings = () => {
   const handleSubmit = event => event.preventDefault()
 
   return (
-    <Layout>
+
+    <Layout user={props.user}>
+      <Search queryListing={queryListing} setQueryListing={setQueryListing} />
+
+    
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
+
       {queryListing ? (
         <div className="Listing">
           {queryListing.map((listing) => (

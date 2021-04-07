@@ -57,6 +57,8 @@ function SignIn(props) {
   };
   const { username, password } = form;
 
+    
+  
   return (
     <Layout>
       <div className="signup-In-form-container">
@@ -81,17 +83,15 @@ function SignIn(props) {
             placeholder="Password"
             onChange={handleChange}
           />
-          <br />
-          <ColorButton
-            variant="contained"
-            color="primary"
-            type="submit"
-            className={classes.margin}
-          >
+
+          <br/>
+             <ColorButton variant="contained" color="primary" type="submit" className={classes.margin}>
             Sign In
-          </ColorButton>
-        </form>
-      </div>
+        </ColorButton>
+       
+            </form>
+        </div>
+
     </Layout>
   );
 }

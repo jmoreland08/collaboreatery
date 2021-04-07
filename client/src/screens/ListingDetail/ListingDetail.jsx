@@ -5,7 +5,7 @@ import Layout from "../../components/shared/Layout/Layout";
 import "./ListingDetail.css";
 import ListingEdit from "../ListingEdit/ListingEdit";
 
-const ListingDetail = () => {
+const ListingDetail = (props) => {
   const { id } = useParams();
   const [Listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ const ListingDetail = () => {
   }, [editToggleFetch]);
 
   return (
-    <Layout>
+    <Layout user={props.user}>
       <div className="listing">
         <div className="listing-img-price">
           <img src={Listing.image_url} alt="listing" />
