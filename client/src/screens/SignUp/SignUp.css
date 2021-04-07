@@ -34,3 +34,26 @@ padding: 30px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
+@media only screen and (max-width: 450px) {
+  .signup-In-form{
+    width: 280px;
+  padding: 10px;
+  }
+  .signup-In-input{
+    font-size: 12px;
+    margin: 10px;
+    width: 200px;
+  }
+}
+@media only screen and (max-width: 330px) {
+  .signup-In-form{
+    width: 260px;
+  padding: 10px;
+  }
+  .signup-In-input{
+    font-size: 12px;
+    margin: 10px;
+    width: 200px;
+  }
+  
+}

@@ -36,10 +36,10 @@ function Home(props) {
             alt="people"
           />
         </div>
-        <div className="content">
-          <h3>Add Your Favorite Place</h3>
-          <h3>Find What You're Craving</h3>
-          <h3>For The People By The People</h3>
+        <div className="content" >
+          <h2 className="content">Add Your Favorite Place</h2>
+          <h2 className="content">Find What You're Craving</h2>
+          <h2 className="content">For The People By The People</h2>
         </div>
       </div>
     </Layout>

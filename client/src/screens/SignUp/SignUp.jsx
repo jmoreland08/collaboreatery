@@ -114,6 +114,7 @@ function SignUp(props) {
             Sign Up
           </ColorButton>
         </form>
+
       </div>
     </Layout>
   );
