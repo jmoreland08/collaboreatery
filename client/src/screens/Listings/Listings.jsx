@@ -52,7 +52,6 @@ export const Listings = (props) => {
   return (
 
     <Layout user={props.user}>
-      <Search queryListing={queryListing} setQueryListing={setQueryListing} />
 
     
       <Search onChange={handleSearch} />
