@@ -1,3 +1,9 @@
 .sort {
   outline: none;
+  box-shadow: 1px 1px 3px black;
+}
+
+label {
+  font-weight: 500;
+  margin-right: 5px;
 }
