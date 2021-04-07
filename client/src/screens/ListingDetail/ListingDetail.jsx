@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getListing } from "../../services/listings";
+import { getListing, deleteListing } from "../../services/listings";
 import Layout from "../../components/shared/Layout/Layout";
 import "./ListingDetail.css";
 
@@ -27,6 +27,9 @@ const ListingDetail = () => {
           <h4>{Listing.location}</h4>
           <h4>{Listing.cuisine}</h4>
           <p>{Listing.description}</p>
+          <button id="delete-button" onClick={() => deleteListing(Listing._id)}>
+            Delete
+          </button>
         </div>
       </div>
     </Layout>
