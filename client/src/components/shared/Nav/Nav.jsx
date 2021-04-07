@@ -6,7 +6,7 @@ const authenticatedOptions = (
   
     <>
         <NavLink className="link" to="/add-listing">Add New Restaraunt</NavLink>
-        {/* <NavLink className="link" to="/sign-out">Sign Out</NavLink> */}
+        <NavLink className="link" to="/sign-out">Sign Out</NavLink> 
     </>
 )
 
