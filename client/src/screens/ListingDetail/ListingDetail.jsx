@@ -1,4 +1,4 @@
-import { useParams, Link, Redirect } from "react-router-dom";
+import { useParams, Link, Redirect, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getListing, deleteListing } from "../../services/listings";
 import Layout from "../../components/shared/Layout/Layout";
@@ -10,6 +10,7 @@ const ListingDetail = (props) => {
   const [Listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [editToggleFetch, setEditToggleFetch] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -18,6 +19,11 @@ const ListingDetail = (props) => {
     };
     fetchListing();
   }, [editToggleFetch]);
+
+  const deleteCurrentListing = async () => {
+    await deleteListing(Listing._id);
+    history.push("/listings");
+  };
 
   return (
     <Layout user={props.user}>
@@ -30,7 +36,7 @@ const ListingDetail = (props) => {
           <h4>{Listing.location}</h4>
           <h4>{Listing.cuisine}</h4>
           <p>{Listing.description}</p>
-          <button id="delete-button" onClick={() => deleteListing(Listing._id)}>
+          <button id="delete-button" onClick={deleteCurrentListing}>
             Delete
           </button>
           <button id="edit-button" onClick={() => setShow(true)}>
