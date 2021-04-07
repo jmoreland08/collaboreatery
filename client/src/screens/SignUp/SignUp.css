@@ -1,11 +1,11 @@
 
-.form-container{
+.signup-In-form-container{
   background-color: #FFF7E7;
   padding: 30px;
   height: 100vh;
   color: #707070;
 }
-input{
+.signup-In-input{
   text-align: center;
   font-size: 16px;
   padding: 5px;
@@ -16,11 +16,11 @@ input{
   border: 1px solid #707070;
   box-shadow: 1px 1px 3px 1px grey;
 }
-input:focus{
+.signup-In-input:focus{
   outline: none;
 }
 
-form{
+.signup-In-form{
   width: 400px;
   border: 1px solid #707070;;
   border-radius: 25px;
@@ -30,7 +30,7 @@ padding: 30px;
   background-color: #DFE0DF;
   box-shadow: 1px 1px 3px 1px grey;
 }
-form >input{
+.signup-In-form > .signup-In-input{
   margin-bottom: 20px;
   margin-top: 20px;
 }

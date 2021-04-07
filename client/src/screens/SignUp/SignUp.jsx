@@ -63,10 +63,13 @@ function SignUp(props) {
   
   return (
     <Layout>
-    <div className="form-container">
-      <form onSubmit={onSignUp}>
+    <div className="signup-In-form-container">
+        <form onSubmit={onSignUp}
+        className="signup-In-form"
+        >
         <h1>Sign-Up</h1>
-        <input
+          <input
+            className="signup-In-input"
           required
           type="text"
           name="username"
@@ -75,7 +78,8 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br/>
-        <input
+          <input
+            className="signup-In-input"
           required
           type="email"
           name="email"
@@ -84,7 +88,8 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br/>
-        <input
+          <input
+            className="signup-In-input"
           required
           name="password"
           value={password}
@@ -93,7 +98,8 @@ function SignUp(props) {
           onChange={handleChange}
         />
         <br/>
-        <input
+          <input
+            className="signup-In-input"
           required
           name="passwordConfirmation"
           value={passwordConfirmation}
