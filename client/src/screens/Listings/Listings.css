@@ -11,6 +11,11 @@
   background-color: #FFF7E7;
 }
 
+.Listing >img {
+  height: 140px;
+  width:140px;
+}
+
 .Listing > a {
   text-decoration: none;
 }
