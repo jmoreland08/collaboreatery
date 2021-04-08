@@ -63,6 +63,12 @@ export const Listings = (props) => {
 
 
 
+<<<<<<< HEAD
+=======
+    
+
+
+>>>>>>> 4f6a2e205f28e58a90469b36ee4dc0b40eeb4edd
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
 
