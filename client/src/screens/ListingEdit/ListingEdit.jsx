@@ -44,8 +44,7 @@ function ListingEdit({
       location,
       cuisine,
     };
-    const editedListingData = await updateListing(id, editedListing);
-    console.log(editedListingData);
+    await updateListing(id, editedListing);
     setShow(false);
     setEditToggleFetch(!editToggleFetch);
   };
@@ -95,19 +94,21 @@ function ListingEdit({
           />
           <br />
           <Form.Control
-            required
-            value={price_point}
-            placeholder="Price Point"
-            onChange={(e) => setPrice_point(e.target.value)}
-          />
-          <br />
-          <Form.Control
             as="textarea"
             rows={2}
             required
             value={image_url}
             placeholder="Image URL"
             onChange={(e) => setImg_url(e.target.value)}
+          />
+          <br />
+          <p id="price-point-label">Price Point:</p>
+          <Form.Control
+            id="price-point-range"
+            value={price_point}
+            type="range"
+            required
+            onChange={(e) => setPrice_point(e.target.value)}
           />
         </Form.Group>
         <Modal.Footer id="modal-footer">
