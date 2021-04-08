@@ -41,4 +41,10 @@ export const verifyUser = async () => {
   return false;
 };
 //call in listing detail screen
-//export const addFavorite
+export const addFavorite = async (id, listingId) => {
+  try {
+    
+  } catch (error) {
+    
+  }
+}
