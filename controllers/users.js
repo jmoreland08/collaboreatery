@@ -22,6 +22,7 @@ const signUp = async (req, res) => {
     await user.save();
 
     const payload = {
+      id: user.id,
       username: user.username,
       email: user.email,
     };
@@ -42,6 +43,7 @@ const signIn = async (req, res) => {
 
     if (await bcrypt.compare(password, user.password_digest)) {
       const payload = {
+        id: user.id,
         username: user.username,
         email: user.email,
       };
