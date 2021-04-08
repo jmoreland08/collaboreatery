@@ -10,7 +10,7 @@ function ListingCreate({ show, setShow, fetchListings }) {
   const [location, setLocation] = useState("");
   const [cuisine, setCuisine] = useState("");
   const [image_url, setImg_url] = useState("");
-  const [price_point, setPrice_point] = useState("");
+  const [price_point, setPrice_point] = useState(50);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,8 @@ function ListingCreate({ show, setShow, fetchListings }) {
       cuisine,
     };
     const newListingData = await createListing(newListing);
-    fetchListings();
+    console.log(newListingData);
+    if (fetchListings) fetchListings();
     setShow(false);
   };
 
@@ -68,20 +69,23 @@ function ListingCreate({ show, setShow, fetchListings }) {
           />
           <br />
           <Form.Control
-            required
-            placeholder="Price Point"
-            onChange={(e) => setPrice_point(e.target.value)}
-          />
-          <br />
-          <Form.Control
             as="textarea"
             rows={2}
             required
             placeholder="Image URL"
             onChange={(e) => setImg_url(e.target.value)}
           />
+          <br />
+          <p id="price-point-label">Price Point:</p>
+          <Form.Control
+            id="price-point-range"
+            value={price_point}
+            type="range"
+            required
+            onChange={(e) => setPrice_point(e.target.value)}
+          />
         </Form.Group>
-        <Modal.Footer>
+        <Modal.Footer id="modal-footer">
           <Button id="form-button" type="submit">
             Submit
           </Button>
