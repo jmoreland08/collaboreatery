@@ -1,6 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import Layout from "../../components/shared/Layout/Layout";
+import { useState } from "react";
 import { createListing } from "../../services/listings";
 import { Modal, Button, Form } from "react-bootstrap";
 import "./ListingCreate.css";
@@ -25,14 +24,11 @@ function ListingCreate({ show, setShow, fetchListings }) {
     };
     const newListingData = await createListing(newListing);
     fetchListings();
-    console.log(newListingData);
     setShow(false);
   };
 
   return (
-    //add  user={props.user} to layout tag once users are implemented
     <Modal
-      // {...props}
       show={show}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
