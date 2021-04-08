@@ -39,6 +39,7 @@
 }
 
 #delete-button,
+#add-to-favorites,
 #edit-button {
   border-radius: 25px;
   background-color: #FFB332;
