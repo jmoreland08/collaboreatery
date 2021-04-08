@@ -2,6 +2,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const db = require("../db/connection");
+const Listing = require("../models/listing")
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
@@ -15,18 +16,18 @@ const signUp = async (req, res) => {
     const user = new User({
       username,
       email,
-      password_digest
+      password_digest,
     });
 
     await user.save();
 
     const payload = {
       username: user.username,
-      email: user.email
+      email: user.email,
     };
 
     const token = jwt.sign(payload, TOKEN_KEY);
-    
+
     res.status(201).json({ token });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -36,14 +37,13 @@ const signUp = async (req, res) => {
 const signIn = async (req, res) => {
   try {
     const { username, password } = req.body;
-    
+
     const user = await User.findOne({ username: username });
-  
+
     if (await bcrypt.compare(password, user.password_digest)) {
-    
       const payload = {
         username: user.username,
-        email: user.email
+        email: user.email,
       };
       const token = jwt.sign(payload, TOKEN_KEY);
       res.status(201).json({ token });
@@ -67,9 +67,23 @@ const verify = async (req, res) => {
   }
 };
 
+const addFavorite = async (req, res) => {
+  try {
+    const listing = await Listing.findById(req.params.listingId);
+    const user = await User.findById(req.params.id);
+    user.favorites.push(listing);
+    await user.save();
+    res.json({ status: "Favorite Added!" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
 
+// const getuser = async User.findById()
 module.exports = {
   signUp,
   signIn,
-  verify
+  verify,
+  addFavorite,
+  // getUser
 };
