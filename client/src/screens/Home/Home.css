@@ -3,6 +3,7 @@
   text-align: center;
   color: #707070;
   margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .browse-button {
@@ -13,25 +14,34 @@
   border-width: 1px;
   border-color: #dfe0df;
   margin-top: 15px;
+  margin-bottom: 35px;
 }
 .about {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-top: 30px;
   
 }
+
 .home-img {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  margin: 0 auto 0 auto;
+  margin: 0 20px 0 20px;
   cursor: pointer;
   height: 100px;
   width: 100px;
 }
+
+#link{
+  width: fit-content;
+  margin: 0 !important;
+  background: none ;
+}
+
 .content {
   display: flex;
   flex-direction: row;
@@ -39,7 +49,6 @@
   justify-content: center;
   font-size: 14px;
   width: 100vw;
-  margin: 0 auto 0 auto;
   padding-top: 5px ;
 }
 

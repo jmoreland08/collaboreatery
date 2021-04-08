@@ -7,7 +7,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 350,
+    maxWidth: 340,
+    minWidth: 340,
     marginTop: 10,
     marginBottom: 20,
     marginLeft: 65,
@@ -21,22 +22,23 @@ export const Listing = (props) => {
   const classes = useStyles();
 
   return (
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            alt="listing"
-            height="140"
-            image={listing.image_url}
-            title="collaboreatery"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2"></Typography>
-            <Typography variant="body3" color="textSecondary" component="h6">
-              {listing.name}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-      </Card>
+    <Card className={classes.root}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          alt="listing"
+          height="140"
+          width="140"
+          image={listing.image_url}
+          title="collaboreatery"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2"></Typography>
+          <Typography variant="body3" color="textSecondary" component="h6">
+            {listing.name}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 };
