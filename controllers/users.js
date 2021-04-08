@@ -81,11 +81,19 @@ const addFavorite = async (req, res) => {
   }
 };
 
-// const getuser = async User.findById()
+const getUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id)
+    const userFavorites = await Favorites.find({ userId: user.id })
+    res.json(userFavorites)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
 module.exports = {
   signUp,
   signIn,
   verify,
   addFavorite,
-  // getUser
+  getUser
 };

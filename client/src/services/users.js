@@ -44,7 +44,9 @@ export const verifyUser = async () => {
 export const addFavorite = async (id, listingId) => {
   try {
     
+    const response = await api.put(`/users/${id}/addFavorite/${listingId}`);
+    return response.data;
   } catch (error) {
-    
+    throw error;
   }
-}
+};
