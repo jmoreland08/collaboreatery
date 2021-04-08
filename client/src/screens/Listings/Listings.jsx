@@ -63,7 +63,7 @@ export const Listings = (props) => {
 
 
 
-    <Layout user={props.user}>
+    
 
 
       <Search onChange={handleSearch} />
