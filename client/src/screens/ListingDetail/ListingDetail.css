@@ -4,7 +4,8 @@
   display: flex;
   flex-flow: row;
   justify-content: center;
-  align-items: center;
+  align-items:flex-start;
+  padding-top: 150px;
   background-color: #fff7e7;
   height: 100vh;
 }
@@ -16,7 +17,7 @@
 
 .listing-img-price > img {
   height: 350px;
-  width: inherit;
+  width: 450px;
   border-radius: 50px;
 }
 
