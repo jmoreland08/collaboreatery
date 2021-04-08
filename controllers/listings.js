@@ -14,8 +14,8 @@ const getListings = async (req, res) => {
 
 const getListing = async (req, res) => {
   try {
-      const { id } = req.params
-      const listing = await Listing.findById(id)
+    const { id } = req.params
+    const listing = await Listing.findById(id)
       if (listing) {
           return res.json(listing)
       }

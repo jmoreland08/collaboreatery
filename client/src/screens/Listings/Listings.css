@@ -1,0 +1,17 @@
+
+.listing-card {
+  margin-bottom: 30px;
+}
+
+.Listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+  background-color: #FFF7E7;
+}
+
+.Listing > a {
+  text-decoration: none;
+}
+

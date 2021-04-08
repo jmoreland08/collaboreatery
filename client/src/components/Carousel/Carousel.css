@@ -1,0 +1,49 @@
+#carousel-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 170px;
+  width: 500px;
+  background-color: #dfe0df;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#landing-carousel {
+  margin-top: 10px;
+}
+
+.d-block {
+  height: 150px;
+  width: 250px;
+  justify-content: center;
+}
+.carousel-control-prev {
+  margin-left: -40px;
+  
+}
+.carousel-control-next-icon {
+  margin-right: -70px;
+}
+.carousel-caption {
+  position: absolute;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  margin-bottom: -50px;
+  color:white;
+  text-align: center;
+  /* opacity: 80%;
+  background-color: black;
+  background-size: cover; */
+}
+h3 {
+  opacity: 80%;
+  background-color: black;
+  background-size: cover;  
+}
+.carousel-indicators {
+  opacity: 0%
+}
