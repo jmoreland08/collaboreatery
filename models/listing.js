@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Listing = new Schema(
+
   {
     name: { type: String, required: true },
     image_url: { type: String, required: true },
@@ -12,5 +13,6 @@ const Listing = new Schema(
   },
   { timestamps: true }
 );
+
 
 module.exports = mongoose.model("listings", Listing);

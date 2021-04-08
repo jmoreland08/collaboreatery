@@ -8,10 +8,11 @@
   justify-content: space-between;
   height: 50px;
   align-items: center;
+  margin-bottom: 50px;
 }
 .link {
   color: #fff7e7;
-  margin-right: 30px;
+  margin-right: 30px !important;
   border: none;
   background-color: #ffa08b;
 }
@@ -21,4 +22,10 @@
   margin-left: 40px;
   font-weight: 700;
   font-size: 20px;
+}
+
+.link-welcome {
+  width: fit-content;
+  margin-right: 85px;
+
 }
