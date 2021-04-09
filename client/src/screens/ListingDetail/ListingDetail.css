@@ -43,6 +43,10 @@
   font-size: 18px;
 }
 
+.link {
+  background: none;
+}
+
 #delete-button,
 #add-to-favorites,
 #edit-button {

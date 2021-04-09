@@ -23,7 +23,7 @@ function ListingCreate({ show, setShow, fetchListings }) {
       cuisine,
     };
     const newListingData = await createListing(newListing);
-    console.log(newListingData);
+    
     if (fetchListings) fetchListings();
     setShow(false);
   };

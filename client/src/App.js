@@ -21,7 +21,6 @@ function App() {
     };
     fetchUser();
   }, []);
-console.log(user)
   const clearUser = () => setUser(null);
 
   return (
