@@ -36,21 +36,26 @@
     font-size: 14px;
   }
   .link{
-    margin-right: 10px !important;
+  
     font-size: 12px;
-  }
-  #nav {
-    display: none;
+    /* background-color: #f8f9fa; */
+    /* color: black; */
+    
   }
 }
-@media (min-width:800px) {
+  /* #nav {
+    display: none;
+  }
+} */
+/* @media (max-width:800px) {
+
   #media-nav{
   display: none;
   }
   .bg-light {
     background-color: #ffa08b; 
   }
- .media-links {
+ #mr-auto {
   display: flex;
   flex-direction: column;
   background-color: #f8f9fa;
@@ -58,5 +63,6 @@
  
   justify-content:left;
  }
+ 
   
-}
+} */

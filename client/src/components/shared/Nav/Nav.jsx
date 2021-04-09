@@ -62,11 +62,11 @@ const NavFunction = ({ user, fetchListings }) => {
         createToggleFetch={createToggleFetch}
         setCreateToggleFetch={setCreateToggleFetch}
       />
-      <Navbar bg="light" expand="lg" id="media-nav">
+      {/* <Navbar bg="light" expand="lg" id="media-nav">
         <Navbar.Brand href="/">Collaboreatery</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
+          <Nav id="mr-auto">
             <Nav.Link>
               <ListingCreate
                 user={user}
@@ -86,17 +86,8 @@ const NavFunction = ({ user, fetchListings }) => {
             {alwaysOptions}
             {user ? authenticatedOptions : unauthenticatedOptions}
           </div>
-
-          {/* <ListingCreate
-        user={user}
-        fetchListings={fetchListings}
-        show={show}
-        setShow={setShow}
-        createToggleFetch={createToggleFetch}
-        setCreateToggleFetch={setCreateToggleFetch}
-      /> */}
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> */}
     </nav>
   );
 };
