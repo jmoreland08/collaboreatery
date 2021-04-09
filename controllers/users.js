@@ -46,8 +46,10 @@ const signIn = async (req, res) => {
         id: user.id,
         username: user.username,
         email: user.email,
+        // favorites: user.favorites
       };
       const token = jwt.sign(payload, TOKEN_KEY);
+
       res.status(201).json({ token });
     } else {
       res.status(401).send("Invalid Credentials");
@@ -81,10 +83,11 @@ const addFavorite = async (req, res) => {
   }
 };
 
-const getUser = async (req, res) => {
+const getUserFavorites = async (req, res) => {
   try {
     const user = await User.findById(req.params.id)
-    const userFavorites = await Favorites.find({ userId: user.id })
+    const userFavorites = user.favorites
+
     res.json(userFavorites)
   } catch (error) {
     res.status(500).json({ error: error.message })
@@ -95,5 +98,5 @@ module.exports = {
   signIn,
   verify,
   addFavorite,
-  getUser
+  getUserFavorites
 };

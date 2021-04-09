@@ -13,6 +13,7 @@ export default function Carousels() {
     const fetchListings = async () => {
       const listings = await getListings();
       setAllListings(listings);
+      
     };
     fetchListings();
   }, []);
