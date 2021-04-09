@@ -16,6 +16,9 @@ const Nav = ({ user, fetchListings }) => {
       <NavLink className="link" to="/sign-out">
         Sign Out
       </NavLink>
+      <NavLink className="link" to="/favorites">
+        My Favorites
+      </NavLink>
     </>
   );
 
