@@ -2,6 +2,7 @@ import React from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import Navbar from "react-bootstrap/Carousel";
 import ListingCreate from "../../../screens/ListingCreate/ListingCreate";
 
 const Nav = ({ user, fetchListings }) => {
