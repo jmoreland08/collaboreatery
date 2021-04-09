@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Redirect, Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import "./Home.css";
 import { useState } from "react";
 import Layout from "../../components/shared/Layout/Layout";
