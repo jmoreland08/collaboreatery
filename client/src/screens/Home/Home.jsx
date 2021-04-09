@@ -9,10 +9,6 @@ import ListingCreate from "../../screens/ListingCreate/ListingCreate";
 function Home(props) {
   const [show, setShow] = useState(false);
 
-  // const handleImageClick = () => {
-  //   props.user ? setShow(true) : <Redirect push to="/sign-up" />;
-  // };
-
   return (
     <Layout className="home-layout" user={props.user}>
       <ListingCreate show={show} setShow={setShow} />

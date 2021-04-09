@@ -44,12 +44,18 @@ export const Listings = (props) => {
   };
 
   const handleSearch = (event) => {
-    const newQueriedProducts = allListings.filter((listing) =>
+    const cuisineQueryProducts = allListings.filter((listing) =>
       listing.cuisine.toLowerCase().includes(event.target.value.toLowerCase())
     );
-    setQueryListing(newQueriedProducts, () => handleSort(sortType));
+    const locationQueryProducts = allListings.filter((listing) =>
+      listing.location.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+    const newQueriedProducts = cuisineQueryProducts.concat(
+      locationQueryProducts
+    );
+    let uniqueQueriedProducts = [...new Set(newQueriedProducts)];
+    setQueryListing(uniqueQueriedProducts);
   };
-
 
   const toggleToggleFetch = () => {
     setToggleFetch(!toggleFetch);
@@ -57,15 +63,8 @@ export const Listings = (props) => {
 
   const handleSubmit = (event) => event.preventDefault();
 
-
   return (
     <Layout fetchListings={toggleToggleFetch} user={props.user}>
-
-
-
-    
-
-
       <Search onChange={handleSearch} />
       <Sort onSubmit={handleSubmit} onChange={handleSort} />
 
