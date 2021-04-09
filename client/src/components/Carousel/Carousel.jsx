@@ -7,7 +7,7 @@ import Carousel from "react-bootstrap/Carousel";
 
 export default function Carousels() {
   const [allListings, setAllListings] = useState([]);
-  let randListing = allListings[Math.floor(Math.random() * 6)];
+  let randListing = allListings[Math.floor(Math.random() * allListings.length)];
 
   useEffect(() => {
     const fetchListings = async () => {

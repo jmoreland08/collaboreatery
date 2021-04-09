@@ -51,7 +51,6 @@ export const addFavorite = async (id, listingId) => {
   }
 };
 export const getUserFavorites = async (id) => {
-  console.log(id)
   try {
     const response = await api.get(`/users/favorites/${id}`)
     return response.data
