@@ -5,7 +5,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const getListings = async (req, res) => {
     try {
-        const listing = await Listing.find()
+      const listing = await Listing.find()
+      console.log(Listing)
         res.json(listing)
     } catch (error) {
         return res.status(500).send(error.message)

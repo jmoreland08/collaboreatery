@@ -1,7 +1,8 @@
 import { useParams, Redirect, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getListing, deleteListing } from "../../services/listings";
-import {addFavorite} from "../../services/users"
+import { addFavorite } from "../../services/users";
+import { NavLink } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import "./ListingDetail.css";
 import ListingEdit from "../ListingEdit/ListingEdit";
@@ -39,10 +40,8 @@ const ListingDetail = (props) => {
   };
 
 
-  // const addNewFavorite = async () => {
-  //   await addFavorite(User._id);
+  
 
-  // }
 
   return (
     <Layout user={props.user}>
@@ -63,7 +62,14 @@ const ListingDetail = (props) => {
           <button id="edit-button" onClick={() => setShow(true)}>
             Edit
           </button>
-          <button id="add-to-favorites" onClick={() => addFavorite(props.user.id, listing._id)}>Add to favorites</button>
+          <NavLink className="link" to="/favorites">
+            <button
+              id="add-to-favorites"
+              onClick={() => addFavorite(props.user.id, listing._id)}
+            >
+              Add to favorites
+            </button>
+          </NavLink>
         </div>
         {props.user ? (
           <ListingEdit
