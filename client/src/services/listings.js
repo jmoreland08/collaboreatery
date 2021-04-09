@@ -3,7 +3,6 @@ import api from "./apiConfig";
 export const getListings = async () => {
   try {
     const response = await api.get("/listings");
-    console.log('hello')
     return response.data;
   } catch (error) {
     throw error;
@@ -45,4 +44,3 @@ export const deleteListing = async (id) => {
     throw error;
   }
 };
-
