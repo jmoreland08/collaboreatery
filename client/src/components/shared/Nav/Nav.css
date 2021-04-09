@@ -39,6 +39,24 @@
     margin-right: 10px !important;
     font-size: 12px;
   }
+  #nav {
+    display: none;
+  }
 }
-
-
+@media (min-width:800px) {
+  #media-nav{
+  display: none;
+  }
+  .bg-light {
+    background-color: #ffa08b; 
+  }
+ .media-links {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  border-style: solid;
+ 
+  justify-content:left;
+ }
+  
+}
