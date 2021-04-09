@@ -36,9 +36,28 @@ export const verifyUser = async () => {
   const token = localStorage.getItem("token");
   if (token) {
     const res = await api.get("/verify");
+    console.log(res.data)
     return res.data;
   }
   return false;
 };
 //call in listing detail screen
-//export const addFavorite
+export const addFavorite = async (id, listingId) => {
+  try {
+    
+    const response = await api.put(`/users/${id}/addFavorite/${listingId}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const getUserFavorites = async (id) => {
+  console.log(id)
+  try {
+    const response = await api.get(`/users/favorites/${id}`)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}
+  

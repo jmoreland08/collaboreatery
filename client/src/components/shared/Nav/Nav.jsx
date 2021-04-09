@@ -2,9 +2,10 @@ import React from "react";
 import "./Nav.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { Navbar, Nav } from "react-bootstrap";
 import ListingCreate from "../../../screens/ListingCreate/ListingCreate";
 
-const Nav = ({ user, fetchListings }) => {
+const NavFunction = ({ user, fetchListings }) => {
   const [createToggleFetch, setCreateToggleFetch] = useState(false);
   const [show, setShow] = useState(false);
   const authenticatedOptions = (
@@ -15,6 +16,9 @@ const Nav = ({ user, fetchListings }) => {
 
       <NavLink className="link" to="/sign-out">
         Sign Out
+      </NavLink>
+      <NavLink className="link" to="/favorites">
+        My Favorites
       </NavLink>
     </>
   );
@@ -45,7 +49,7 @@ const Nav = ({ user, fetchListings }) => {
           Collaboreatery
         </NavLink>
         <div className="links">
-          {user && <div className="link welcome">Welcome, {user.username}</div>}
+          {user && <div className="link-welcome">Welcome, {user.username}</div>}
           {alwaysOptions}
           {user ? authenticatedOptions : unauthenticatedOptions}
         </div>
@@ -58,8 +62,43 @@ const Nav = ({ user, fetchListings }) => {
         createToggleFetch={createToggleFetch}
         setCreateToggleFetch={setCreateToggleFetch}
       />
+      <Navbar bg="light" expand="lg" id="media-nav">
+        <Navbar.Brand href="/">Collaboreatery</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link>
+              <ListingCreate
+                user={user}
+                fetchListings={fetchListings}
+                show={show}
+                setShow={setShow}
+                createToggleFetch={createToggleFetch}
+                setCreateToggleFetch={setCreateToggleFetch}
+              />
+            </Nav.Link>
+          </Nav>
+
+          <div className="media-links">
+            {user && (
+              <div className="link-welcome">Welcome, {user.username}</div>
+            )}
+            {alwaysOptions}
+            {user ? authenticatedOptions : unauthenticatedOptions}
+          </div>
+
+          {/* <ListingCreate
+        user={user}
+        fetchListings={fetchListings}
+        show={show}
+        setShow={setShow}
+        createToggleFetch={createToggleFetch}
+        setCreateToggleFetch={setCreateToggleFetch}
+      /> */}
+        </Navbar.Collapse>
+      </Navbar>
     </nav>
   );
 };
 
-export default Nav;
+export default NavFunction;

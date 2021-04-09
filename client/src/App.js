@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./screens/Home/Home";
 import { Listings } from "./screens/Listings/Listings";
+import  Favorites from "./screens/Favorites/Favorites";
 import ListingCreate from "./screens/ListingCreate/ListingCreate";
 import ListingDetail from "./screens/ListingDetail/ListingDetail";
 import { Route, Switch, Redirect } from "react-router-dom";
@@ -20,7 +21,7 @@ function App() {
     };
     fetchUser();
   }, []);
-
+console.log(user)
   const clearUser = () => setUser(null);
 
   return (
@@ -52,6 +53,9 @@ function App() {
 
         <Route exact path="/listings/:id">
           <ListingDetail user={user} />
+        </Route>
+        <Route path="/favorites">
+          <Favorites setUser={setUser}  user={user}/>
         </Route>
       </Switch>
     </div>

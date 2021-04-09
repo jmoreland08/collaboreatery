@@ -20,4 +20,9 @@
 #form-button {
   background-color: #ffb332;
   border: none;
+  width: 30%;
+}
+
+#modal-footer {
+  justify-content: center;
 }

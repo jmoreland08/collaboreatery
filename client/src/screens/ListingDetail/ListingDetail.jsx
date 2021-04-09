@@ -1,47 +1,75 @@
 import { useParams, Redirect, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getListing, deleteListing } from "../../services/listings";
+import { addFavorite } from "../../services/users";
+import { NavLink } from "react-router-dom";
 import Layout from "../../components/shared/Layout/Layout";
 import "./ListingDetail.css";
 import ListingEdit from "../ListingEdit/ListingEdit";
 
 const ListingDetail = (props) => {
   const { id } = useParams();
-  const [Listing, setListing] = useState([]);
+  const [listing, setListing] = useState([]);
   const [show, setShow] = useState(false);
   const [editToggleFetch, setEditToggleFetch] = useState(false);
+  const [pricePoint, setPricePoint] = useState("")
   const history = useHistory();
 
   useEffect(() => {
     const fetchListing = async () => {
       const listing = await getListing(id);
       setListing(listing);
+      if (listing.price_point <= 20) {
+        setPricePoint('$')
+      } else if (listing.price_point > 20 && listing.price_point <= 40) {
+        setPricePoint('$$')
+      } else if (listing.price_point > 40 && listing.price_point <= 60) {
+        setPricePoint('$$$')
+      } else if (listing.price_point > 60 && listing.price_point <= 80) {
+        setPricePoint('$$$$')
+      } else {
+        setPricePoint('$$$$$')
+      }
     };
     fetchListing();
   }, [editToggleFetch, id]);
 
   const deleteCurrentListing = async () => {
-    await deleteListing(Listing._id);
+    await deleteListing(listing._id);
     history.push("/listings");
   };
+
+
+  
+
 
   return (
     <Layout user={props.user}>
       <div className="listing">
         <div className="listing-img-price">
-          <img src={Listing.image_url} alt="listing" />
+          <img src={listing.image_url} alt="listing" />
         </div>
         <div className="listing-info">
-          <h4>{Listing.name}</h4>
-          <h4>{Listing.location}</h4>
-          <h4>{Listing.cuisine}</h4>
-          <p>{Listing.description}</p>
+          <h4>{listing.name}</h4>
+          <h4>{listing.location}</h4>
+          <h4>{listing.cuisine}</h4>
+          <h4>{pricePoint}</h4>
+
+          <p>{listing.description}</p>
           <button id="delete-button" onClick={deleteCurrentListing}>
             Delete
           </button>
           <button id="edit-button" onClick={() => setShow(true)}>
             Edit
           </button>
+          <NavLink className="link" to="/favorites">
+            <button
+              id="add-to-favorites"
+              onClick={() => addFavorite(props.user.id, listing._id)}
+            >
+              Add to favorites
+            </button>
+          </NavLink>
         </div>
         {props.user ? (
           <ListingEdit
