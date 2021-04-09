@@ -38,16 +38,17 @@
   .link{
   
     font-size: 12px;
-    background-color: #f8f9fa;
-    color: black;
+    /* background-color: #f8f9fa; */
+    /* color: black; */
     
   }
-  #nav {
+}
+  /* #nav {
     display: none;
   }
-}
-@media (min-width:800px) {
-  
+} */
+/* @media (max-width:800px) {
+
   #media-nav{
   display: none;
   }
@@ -64,4 +65,4 @@
  }
  
   
-}
+} */

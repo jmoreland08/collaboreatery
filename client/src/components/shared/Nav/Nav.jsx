@@ -62,7 +62,7 @@ const NavFunction = ({ user, fetchListings }) => {
         createToggleFetch={createToggleFetch}
         setCreateToggleFetch={setCreateToggleFetch}
       />
-      <Navbar bg="light" expand="lg" id="media-nav">
+      {/* <Navbar bg="light" expand="lg" id="media-nav">
         <Navbar.Brand href="/">Collaboreatery</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -87,7 +87,7 @@ const NavFunction = ({ user, fetchListings }) => {
             {user ? authenticatedOptions : unauthenticatedOptions}
           </div>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> */}
     </nav>
   );
 };
