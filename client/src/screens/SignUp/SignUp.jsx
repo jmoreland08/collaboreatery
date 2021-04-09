@@ -42,7 +42,6 @@ function SignUp(props) {
 
   const onSignUp = (event) => {
     event.preventDefault();
-    console.log("clicked");
     const { setUser } = props;
 
     signUp(form)
